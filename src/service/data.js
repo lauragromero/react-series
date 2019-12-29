@@ -20,4 +20,5 @@ const formatSerieItem = seriesItem => {
         .then(series => series.map(item => formatSerieItem(item)));
   };
   
+  //el reuturn es muy importante porque, se retorna el fetch, por lo tanto luego se puede hacer un then cuando utilizas la funcion otra vez en APP, para alli guardar esos datos en el estado del array de la api
   export default getDataFromApi;
