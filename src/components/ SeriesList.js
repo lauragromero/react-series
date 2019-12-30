@@ -1,17 +1,22 @@
 import React from 'react';
+import SerieItem from './SerieItem';
 
-const SeriesList= (props)=>{
+const SeriesList =(props)=>{
     return(
         <ul className="list">
             {props.dataSeries.map(serie =>{
                 return(
-                <li  className="list__item" key={serie.id}>
-                    <span className="list__item-title" >{serie.name}</span>
-                    <img className="list__item-image" src={serie.image} alt={serie.name}/>
-                </li>
+                    <SerieItem
+                    keys= {serie.id}
+                    id={serie.id}
+                    name={serie.name}
+                    image={serie.image}
+                    addToFav={props.addToFav}
+                    />
                 )})}   
         </ul>
     )
+
 }
 
 export default SeriesList;
